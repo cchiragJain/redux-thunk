@@ -24,3 +24,9 @@ With `redux-thunk` we can return a function as well from an action creator rathe
 
 **Only relevent to the state object in reducers**
 <img src='./README.assets/Screenshot 2020-09-28 154742.png'>
+
+# Action creator
+
+We are following such a approach of only getting that user data whose post it is since if the app scales to say a million users we won't be getting a list of million users everytime a request is made to the backend rather that particular user info only
+
+<img src='./README.assets/actioncreator.png'>
