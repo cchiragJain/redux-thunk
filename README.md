@@ -15,3 +15,12 @@ After dispatching an action rather than sending it to a reducer directly we send
 
 We are using a middleware known as `redux-thunk` in order to help us with async requests.
 With `redux-thunk` we can return a function as well from an action creator rather than to return action objects.
+
+# Reducers Rules
+
+<img src='./README.assets/reducers1.png'>
+
+<img src='./README.assets/rulesofreducers.png'>
+
+**Only relevent to the state object in reducers**
+<img src='./README.assets/Screenshot 2020-09-28 154742.png'>
