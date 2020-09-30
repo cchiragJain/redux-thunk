@@ -5,10 +5,19 @@ export const fetchPostsAndUser = () => async (dispatch, getState) => {
 	// the function fetchPosts needs to be dispatched as well
 	// we are using the await keyword to wait for the request to get completed of fetchPosts
 	await dispatch(fetchPosts());
-	// the map function from lodash will make sure that we get back only the userId property from all the posts and the uniq function will find all the unique users from them
+	// chain basically calls all these functions with the argument that is passed into it
+	_.chain(getState().posts)
+		.map('userId')
+		.uniq()
+		.forEach(id => dispatch(fetchUser(id)))
+		.value();
+
+	/*
+	the map function from lodash will make sure that we get back only the userId property from all the posts and the uniq function will find all the unique users from them
 	const userIds = _.uniq(_.map(getState().posts, 'userId'));
-	// notice how we are not using a await keyword in front of dispatch here since we don't have any other logic afterwards and don't have to wait for it
+	notice how we are not using a await keyword in front of dispatch here since we don't have any other logic afterwards and don't have to wait for it
 	userIds.forEach(id => dispatch(fetchUser(id)));
+	*/
 };
 
 export const fetchPosts = () => async dispatch => {
