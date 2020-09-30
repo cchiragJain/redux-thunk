@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPosts } from '../actions';
+import { fetchPostsAndUser } from '../actions';
 import UserHeader from './UserHeader';
 
 // we created a class based component because we wanted to make sure that we have access to life cycle methods in order to do data loading with redux
 class PostList extends React.Component {
 	componentDidMount() {
-		this.props.fetchPosts();
+		this.props.fetchPostsAndUser();
 	}
 
 	renderList() {
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
 };
 
 // the first argument of the connect fucntion is always going to be mapStateToProps function
-export default connect(mapStateToProps, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUser })(PostList);

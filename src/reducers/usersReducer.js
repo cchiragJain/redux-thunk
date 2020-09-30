@@ -3,6 +3,7 @@
 export default (state = [], action) => {
 	switch (action.type) {
 		case 'FETCH_USER':
+			// adding a new user
 			return [...state, action.payload];
 		default:
 			return state;
