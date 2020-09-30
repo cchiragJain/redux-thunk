@@ -30,3 +30,15 @@ With `redux-thunk` we can return a function as well from an action creator rathe
 We are following such a approach of only getting that user data whose post it is since if the app scales to say a million users we won't be getting a list of million users everytime a request is made to the backend rather that particular user info only
 
 <img src='./README.assets/actioncreator.png'>
+
+# Memoization
+
+<img src='./README.assets/memoization.png'>
+We can see here that we are making a new requests everytime the userheader component is rendered which is not a good thing
+
+In order to solve this we have 2 ways we can use
+
+**1) Using lodash library .memoize function**
+By memoizing a function we can make sure that it does not run more than once for a particular argument.
+
+This works but has one problem that if we want to fetch the user data for the second time we cannot use the same action creator again
