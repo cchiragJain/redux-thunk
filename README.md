@@ -42,3 +42,6 @@ In order to solve this we have 2 ways we can use
 By memoizing a function we can make sure that it does not run more than once for a particular argument.
 
 This works but has one problem that if we want to fetch the user data for the second time we cannot use the same action creator again
+
+**2) Calling an action creator from an action creator**
+Refer notes
